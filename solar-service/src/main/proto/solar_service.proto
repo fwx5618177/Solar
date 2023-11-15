@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package solar;
+
+// 服务定义
+service SolarService {
+    rpc GetSolarData(SolarRequest) returns (SolarResponse);
+}
+
+// 请求消息
+message SolarRequest {
+    string id = 1;
+}
+
+// 响应消息
+message SolarResponse {
+    string data = 1;
+}
