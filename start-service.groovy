@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-def services = ["service-discovery", "solar-service", "email-service"]
+def services = ["service-discovery", "config-server", "solar-service", "email-service"]
 
 def startService(service, mode) {
     println "Starting $service"
