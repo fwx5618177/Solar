@@ -12,7 +12,7 @@ public class EmailMessageListener {
     @Autowired
     private EmailService emailService;
 
-    @RabbitListener(queues = "email_queue")
+    @RabbitListener(queues = "blog.email.queue")
     public void receiveMessage(String emailMessage) {
         String[] parts = emailMessage.split(":");
 
