@@ -1,221 +1,295 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    
+      
+  
   <modelVersion>4.0.0</modelVersion>
-    
+      
+  
   <groupId>com.moxi.solar</groupId>
-    
+      
+  
   <artifactId>solar-microservices</artifactId>
-    
+      
+  
   <packaging>pom</packaging>
-    
+      
+  
   <version>1.0-SNAPSHOT</version>
-    
+      
+  
   <name>solar-microservices</name>
-    
+      
+  
   <url>http://maven.apache.org</url>
-    
+      
+  
   <properties>
-        
+            
+    
     <java.version>17</java.version>
-        
+            
+    
     <spring-boot.version>3.1.5</spring-boot.version>
-        
+            
+    
     <spring-cloud.version>2022.0.4</spring-cloud.version>
-
-        <!-- gRPC 版本 -->
+            
+    <!-- gRPC 版本 -->
+        
     <grpc.version>1.40.0</grpc.version>
+        
     <protobuf.version>3.17.3</protobuf.version>
-      
+          
+  
   </properties>
-    
+      
+  
   <dependencies>
-        
+            
+    
     <dependency>
-              
+                    
+      
       <groupId>org.springframework.boot</groupId>
-              
+                    
+      
       <artifactId>spring-boot-starter-web</artifactId>
-          
+                
+    
     </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-            <!-- Spring Security -->
-      <dependency>
-          <groupId>org.springframework.security</groupId>
-          <artifactId>spring-security-config</artifactId>
-      </dependency>
-
-      		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.thymeleaf.extras</groupId>
-			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
-			<!-- Temporary explicit version to fix Thymeleaf bug -->
-			<version>3.1.1.RELEASE</version>
-		</dependency>
-
-    <!-- MyBatis -->
+            
     <dependency>
-        <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-starter</artifactId>
-        <version>2.1.4</version>
+                  
+      <groupId>org.springframework.cloud</groupId>
+                  
+      <artifactId>spring-cloud-starter-config</artifactId>
+              
     </dependency>
-
-    <!-- 数据库连接池 -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-jdbc</artifactId>
-    </dependency>
-
-    <!-- 你选择的数据库驱动，例如MySQL -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.23</version>
-    </dependency>
-      
+                
   </dependencies>
-    
+      
+  
   <dependencyManagement>
-        
-    <dependencies>
             
-      <dependency>
-                  
-        <groupId>org.springframework.boot</groupId>
-                  
-        <artifactId>spring-boot-dependencies</artifactId>
-                  
-        <version>${spring-boot.version}</version>
-                  
-        <type>pom</type>
-                  
-        <scope>import</scope>
-              
-      </dependency>
-            
-      
-      <dependency>
-                  
-        <groupId>org.springframework.cloud</groupId>
-                  
-        <artifactId>spring-cloud-dependencies</artifactId>
-                  
-        <version>${spring-cloud.version}</version>
-                  
-        <type>pom</type>
-                  
-        <scope>import</scope>
-              
-      </dependency>
-            
-      <dependency>
-                
-        <groupId>junit</groupId>
-                
-        <artifactId>junit</artifactId>
-                
-        <version>3.8.1</version>
-                
-        <scope>test</scope>
-              
-      </dependency>
-
-          <!-- gRPC 依赖 -->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-          
-    </dependencies>
-      
-  </dependencyManagement>
     
-  <modules>
-
-    <module>service-discovery</module>
-
-    <module>email-service</module>
-
-    <module>config-server</module>
+    <dependencies>
+                  
+      
+      <dependency>
+                          
         
+        <groupId>org.springframework.boot</groupId>
+                          
+        
+        <artifactId>spring-boot-dependencies</artifactId>
+                          
+        
+        <version>${spring-boot.version}</version>
+                          
+        
+        <type>pom</type>
+                          
+        
+        <scope>import</scope>
+                      
+      
+      </dependency>
+                  
+      
+      
+      <dependency>
+                          
+        
+        <groupId>org.springframework.cloud</groupId>
+                          
+        
+        <artifactId>spring-cloud-dependencies</artifactId>
+                          
+        
+        <version>${spring-cloud.version}</version>
+                          
+        
+        <type>pom</type>
+                          
+        
+        <scope>import</scope>
+                      
+      
+      </dependency>
+                  
+      
+      <dependency>
+                        
+        
+        <groupId>junit</groupId>
+                        
+        
+        <artifactId>junit</artifactId>
+                        
+        
+        <version>3.8.1</version>
+                        
+        
+        <scope>test</scope>
+                      
+      
+      </dependency>
+                
+      <!-- gRPC 依赖 -->
+              
+      <dependency>
+                    
+        <groupId>io.grpc</groupId>
+                    
+        <artifactId>grpc-netty-shaded</artifactId>
+                    
+        <version>${grpc.version}</version>
+                
+      </dependency>
+              
+      <dependency>
+                    
+        <groupId>io.grpc</groupId>
+                    
+        <artifactId>grpc-protobuf</artifactId>
+                    
+        <version>${grpc.version}</version>
+                
+      </dependency>
+              
+      <dependency>
+                    
+        <groupId>io.grpc</groupId>
+                    
+        <artifactId>grpc-stub</artifactId>
+                    
+        <version>${grpc.version}</version>
+                
+      </dependency>
+                
+    
+    </dependencies>
+          
+  
+  </dependencyManagement>
+      
+  
+  <modules>
+        
+    <module>service-discovery</module>
+        
+    <module>email-service</module>
+        
+    <module>config-server</module>
+            
+    
     <module>solar-service</module>
+          
+    
+    <module>api-gateway</module>
       
   </modules>
-    
-  <build>
-          
-    <pluginManagement>
-                
-      <plugins>
-                      
-        <plugin>
-                            
-          <groupId>org.springframework.boot</groupId>
-                            
-          <artifactId>spring-boot-maven-plugin</artifactId>
-                            
-          <version>${spring-boot.version}</version>
-                        
-        </plugin>
-
-         <!-- Protobuf 和 gRPC 插件 -->
-        <plugin>
-            <groupId>org.xolstice.maven.plugins</groupId>
-            <artifactId>protobuf-maven-plugin</artifactId>
-            <version>0.6.1</version>
-            <configuration>
-                <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
-            </configuration>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>compile</goal>
-                        <goal>compile-custom</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-        <plugin>
-            <groupId>io.grpc</groupId>
-            <artifactId>protoc-gen-grpc-java</artifactId>
-            <version>1.40.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>compile</goal>
-                        <goal>compile-custom</goal>
-                    </goals>
-                    <configuration>
-                        <pluginId>grpc-java</pluginId>
-                        <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-                  
-      </plugins>
-            
-    </pluginManagement>
       
-  </build>
   
+  <build>
+              
+    
+    <pluginManagement>
+                      
+      
+      <plugins>
+                              
+        
+        <plugin>
+                                      
+          
+          <groupId>org.springframework.boot</groupId>
+                                      
+          
+          <artifactId>spring-boot-maven-plugin</artifactId>
+                                      
+          
+          <version>${spring-boot.version}</version>
+                                  
+        
+        </plugin>
+                 
+        <!-- Protobuf 和 gRPC 插件 -->
+                
+        <plugin>
+                      
+          <groupId>org.xolstice.maven.plugins</groupId>
+                      
+          <artifactId>protobuf-maven-plugin</artifactId>
+                      
+          <version>0.6.1</version>
+                      
+          <configuration>
+                            
+            <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
+                        
+          </configuration>
+                      
+          <executions>
+                            
+            <execution>
+                                  
+              <goals>
+                                        
+                <goal>compile</goal>
+                                        
+                <goal>compile-custom</goal>
+                                    
+              </goals>
+                              
+            </execution>
+                        
+          </executions>
+                  
+        </plugin>
+                
+        <plugin>
+                      
+          <groupId>io.grpc</groupId>
+                      
+          <artifactId>protoc-gen-grpc-java</artifactId>
+                      
+          <version>1.40.0</version>
+                      
+          <executions>
+                            
+            <execution>
+                                  
+              <goals>
+                                        
+                <goal>compile</goal>
+                                        
+                <goal>compile-custom</goal>
+                                    
+              </goals>
+                                  
+              <configuration>
+                                        
+                <pluginId>grpc-java</pluginId>
+                                        
+                <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                                    
+              </configuration>
+                              
+            </execution>
+                        
+          </executions>
+                  
+        </plugin>
+                          
+      
+      </plugins>
+                  
+    
+    </pluginManagement>
+          
+  
+  </build>
+    
+
 </project>
